@@ -45,6 +45,18 @@ if __name__ == '__main__':
       if "your name" in data1:
          name="my name is peter"
          speechtotext(name)
-      
+      elif "old are you" in data1:
+         age = "i am eighteen years old"
+         speechtotext(age)
+      elif 'now time' in data1:
+         time = dt.datetime.now().strftime("%I%M%p")
+         speechtotext(time)
+      elif "youtube" in data1:
+         wb.open("https://chatgpt.com/")
+      elif "joke" in data1:
+         jokes = pj.get_joke(language='en',category = 'netural')
+         speechtotext(jokes)   
+
+
   #else:
    # print('thanks')
