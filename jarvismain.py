@@ -15,6 +15,7 @@ def sptext():
       print('recognizing')
       data = recognizer.recognize_google(audio)
       print(data)
+      return data
 
     except sr.UnknownValueError:
       print('not understanding')
@@ -31,7 +32,7 @@ def speechtotext(x):
   engine.say(x)
   engine.runAndWait()
 
-speechtotext("hi,i am jarvis, your personal voice assistant, how may i help you sir?")
+#speechtotext("hi,i am jarvis, your personal voice assistant, how may i help you sir?")
 
 
 
@@ -39,4 +40,11 @@ speechtotext("hi,i am jarvis, your personal voice assistant, how may i help you 
 
 if __name__ == '__main__':
   
-  if 
+  #if sptext().lower() == "hey peter":
+      data1 = sptext().lower() 
+      if "your name" in data1:
+         name="my name is peter"
+         speechtotext(name)
+      
+  #else:
+   # print('thanks')
