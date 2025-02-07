@@ -42,7 +42,7 @@ def speechtotext(x):
 
 if __name__ == '__main__':
   
- if "hey peter" in sptext().lower():
+ if sptext().lower() == "hey peter":
   while True:
       data1 = sptext().lower() 
       if "your name" in data1:
@@ -57,10 +57,11 @@ if __name__ == '__main__':
       elif "youtube" in data1:
          wb.open("https://chatgpt.com/")
       elif "joke" in data1:
-         jokes = pj.get_joke(language='en',category = 'netural')
+         jokes = pj.get_joke(language='en',category = 'all')
          speechtotext(jokes)   
       elif "play song" in data1:
-         address = "C:\Users\DELL\Downloads\Vele Full Video - SOTY¦Sidharth Malhotra,Varun Dhawan¦Vishal Dadlani,Shekhar Ravjiani"
+         address = "C:\\Users\\DELL\\Downloads\\Vele Full Video - SOTY¦Sidharth Malhotra,Varun Dhawan¦Vishal Dadlani,Shekhar Ravjiani"
+
          listsong = os.listdir(address)
          os.startfile(os.path.join(address,listsong[0]))
 
@@ -68,6 +69,6 @@ if __name__ == '__main__':
          print('thank you')
          sptext('thank you')
          break 
-      time.sleep(2)  
+      t.sleep(2)  
   #else:
    # print('thanks')
