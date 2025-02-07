@@ -4,6 +4,7 @@ import webbrowser as wb
 import datetime as dt
 import pyjokes as pj 
 import os
+import time as t
 
 #speech recognizer takes input and returns the answer
 def sptext():
@@ -41,7 +42,7 @@ def speechtotext(x):
 
 if __name__ == '__main__':
   
-  #if sptext().lower() == "hey peter":
+ if "hey peter" in sptext().lower():
   while True:
       data1 = sptext().lower() 
       if "your name" in data1:
@@ -67,6 +68,6 @@ if __name__ == '__main__':
          print('thank you')
          sptext('thank you')
          break 
-        
+      time.sleep(2)  
   #else:
    # print('thanks')
