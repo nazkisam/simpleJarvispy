@@ -10,7 +10,7 @@ def sptext():
   with sr.Microphone() as source:
     print('Listening...')
     recognizer.adjust_for_ambient_noise(source)
-    audio = recognizer.listn(source)
+    audio = recognizer.listen(source)
     try :
       print('recognizing')
       data = recognizer.recognize_google(audio)
@@ -19,3 +19,24 @@ def sptext():
     except sr.UnknownValueError:
       print('not understanding')
       
+
+    
+
+def speechtotext(x):
+  engine = txt.init()
+  voices = engine.getProperty('voices')
+  engine.setProperty('voice',voices[0].id)
+  rate = engine.getProperty('rate')
+  engine.setProperty('rate',200)
+  engine.say(x)
+  engine.runAndWait()
+
+speechtotext("hi,i am jarvis, your personal voice assistant, how may i help you sir?")
+
+
+
+
+
+if __name__ == '__main__':
+  
+  if 
