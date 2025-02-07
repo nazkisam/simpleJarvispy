@@ -3,6 +3,7 @@ import speech_recognition as sr
 import webbrowser as wb
 import datetime as dt
 import pyjokes as pj 
+import os
 
 #speech recognizer takes input and returns the answer
 def sptext():
@@ -41,6 +42,7 @@ def speechtotext(x):
 if __name__ == '__main__':
   
   #if sptext().lower() == "hey peter":
+  while True:
       data1 = sptext().lower() 
       if "your name" in data1:
          name="my name is peter"
@@ -56,7 +58,15 @@ if __name__ == '__main__':
       elif "joke" in data1:
          jokes = pj.get_joke(language='en',category = 'netural')
          speechtotext(jokes)   
+      elif "play song" in data1:
+         address = "C:\Users\DELL\Downloads\Vele Full Video - SOTY¦Sidharth Malhotra,Varun Dhawan¦Vishal Dadlani,Shekhar Ravjiani"
+         listsong = os.listdir(address)
+         os.startfile(os.path.join(address,listsong[0]))
 
-
+      elif 'exit' in data1:
+         print('thank you')
+         sptext('thank you')
+         break 
+        
   #else:
    # print('thanks')
